@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.MeasuresPages.MeasuresControl"
+             Title="Добавление единицы измерения">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <TableView HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell x:Name="Name" Label="Имя единицы измерения" Placeholder="Введите имя единицы измерения"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <VerticalStackLayout Padding="10" Spacing="15">
+                <Button x:Name="Act" Text="Добавить" Clicked="Act_Clicked"/>
+                <Button x:Name="Remove" Text="Удалить" IsVisible="False" Clicked="Remove_Clicked"/>
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

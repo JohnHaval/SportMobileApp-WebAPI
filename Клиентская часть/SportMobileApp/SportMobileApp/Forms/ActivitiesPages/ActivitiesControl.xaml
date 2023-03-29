@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.ActivitiesPages.ActivitiesControl"
+             Title="Добавление занятие">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+    
+            <Label Text="Спортсмен" Margin="15"/>
+            <Picker x:Name="SportsmenList" ItemDisplayBinding="{Binding SFT}"
+                        Margin="10,0">
+            </Picker>
+
+            <Label Text="Вид спорта" Margin="15"/>
+            <Picker x:Name="SportsList" ItemDisplayBinding="{Binding Name}"
+                    Margin="10,0"/>
+
+            <Label Text="Спортивный разряд" Margin="15"/>
+            <Picker x:Name="SportCategoriesList" ItemDisplayBinding="{Binding Name}"
+                    Margin="10,0"/>
+
+            <HorizontalStackLayout>
+                <Label Margin="15,0" VerticalTextAlignment="Center">Нет команды</Label>
+                <CheckBox x:Name="HasTeam" CheckedChanged="HasTeam_CheckedChanged"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout x:Name="TeamStack">
+                <Label Text="Команда" Margin="15,0" VerticalTextAlignment="Center"/>
+                <Picker x:Name="TeamsList" ItemDisplayBinding="{Binding Name}"
+                        Margin="10,0"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Padding="10" Spacing="15">
+                <Button x:Name="Act" Text="Добавить" Clicked="Act_Clicked"/>
+                <Button x:Name="Remove" Text="Удалить" IsVisible="False" Clicked="Remove_Clicked"/>
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

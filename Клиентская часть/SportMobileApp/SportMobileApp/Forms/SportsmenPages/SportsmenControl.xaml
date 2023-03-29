@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.SportsmenPages.SportsmenControl"
+             Title="Добавление спортсмена">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <TableView HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection Title="ФИО спортсмена">
+                        <EntryCell x:Name="SecondName" Label="Фамилия" Placeholder="Введите фамилию"/>
+                        <EntryCell x:Name="FirstName" Label="Имя" Placeholder="Введите имя"/>
+                        <EntryCell x:Name="ThirdName" Label="Отчество" Placeholder="Введите отчество"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <VerticalStackLayout>
+                <Label Text="Дата рождения" Margin="15"/>
+                <DatePicker x:Name="BornDate" Margin="10,0"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Padding="10" Spacing="15">
+                <Button x:Name="Act" Text="Добавить" Clicked="Act_Clicked"/>
+                <Button x:Name="Remove" Text="Удалить" IsVisible="False" Clicked="Remove_Clicked"/>
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

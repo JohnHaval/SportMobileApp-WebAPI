@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="Информация о видах спорта" Margin="15"/>
+            <Button x:Name="SportsPage" Text="Виды спорта" Clicked="SportsPage_Clicked"/>
+            <Button x:Name="MeasuresPage" Text="Единицы измерения" Clicked="MeasuresPage_Clicked"/>
+
+            <Label Text="Информация о спортсменах" Margin="15"/>
+            <Button x:Name="SportsmenPage" Text="Спортсмены" Clicked="SportsmenPage_Clicked"/>
+            <Button x:Name="ActivitiesPage" Text="Занятия спортсменов" Clicked="ActivitiesPage_Clicked"/>
+            <Button x:Name="SportCategoriesPage" Text="Спортивные разряды" Clicked="SportCategoriesPage_Clicked"/>
+            <Button x:Name="TeamsPage" Text="Команды" Clicked="TeamsPage_Clicked"/>
+
+            <Label Text="Информация о соревнованиях" Margin="15"/>
+            <Button x:Name="CompetitionsPage" Text="Соревнования" Clicked="CompetitionsPage_Clicked"/>
+            <Button x:Name="ResultsPage" Text="Результаты соревнований" Clicked="ResultsPage_Clicked"/>
+
+            <Label Text="Дополнительно" Margin="15"/>
+            <Button x:Name="CompetitionResults" Text="Места в соревновании" Clicked="CompetitionResults_Clicked"/>
+            <Button x:Name="ActivitiesCount" Text="Спортсмены по количеству занятий" Clicked="ActivitiesCount_Clicked"/>
+            <Button x:Name="WorldRecordUppers" Text="Побившие мировой рекорд" Clicked="WorldRecordUppers_Clicked"/>
+            <Button x:Name="BestRecords" Text="Лучшие результаты спортсменов" Clicked="BestRecords_Clicked"/>
+            <Button x:Name="Exit" Text="Выйти" Clicked="Exit_Clicked" Margin="0,0,0,25"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

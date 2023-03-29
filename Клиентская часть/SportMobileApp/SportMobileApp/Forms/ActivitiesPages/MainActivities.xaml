@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.ActivitiesPages.MainActivities"
+             Title="Занятия спортсменов" NavigatedTo="ContentPage_NavigatedTo">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Frame HeightRequest="500">
+            <ListView x:Name="ObjectsList" ItemTapped="ObjectsList_ItemTapped" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout Spacing="5">
+                                <HorizontalStackLayout Spacing="5">
+                                        <Label Text="{Binding Sportsmen.SecondName}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                        <Label Text="{Binding Sportsmen.FirstName}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                        <Label Text="{Binding Sportsmen.ThirdName}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                </HorizontalStackLayout>
+                                
+                                <Label Text="{Binding SportCategories.Name}"/>
+                                
+                                <Label Text="{Binding Sports.Name}"/>
+
+                                <HorizontalStackLayout Spacing="5">
+                                    <Label Margin="0,0,5,0">Команда:</Label>
+                                    <Label Text="{Binding Teams.Name, FallbackValue='нет'}"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </Frame>
+            <VerticalStackLayout Padding="5" Spacing="5">
+
+                <Button x:Name="AddObject" Text="Добавить" Clicked="AddObject_Clicked"/>
+
+                <Button x:Name="Refresh" Text="Обновить" Clicked="Refresh_Clicked"/>
+
+                <Button x:Name="Clear" Text="Очистить" Clicked="Clear_Clicked"/>
+
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.SelectionsPages.SportsmenSports"
+             Title="Спортсмены по занятиям">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Frame HeightRequest="500">
+                <ListView x:Name="ObjectsList" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Spacing="5">
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="{Binding SecondName}" VerticalTextAlignment="Center" FontAttributes="Bold" HeightRequest="50" FontSize="Subtitle"/>
+                                        <Label Text="{Binding FirstName}" VerticalTextAlignment="Center" FontAttributes="Bold" HeightRequest="50" FontSize="Subtitle"/>
+                                        <Label Text="{Binding ThirdName}" VerticalTextAlignment="Center" FontAttributes="Bold" HeightRequest="50" FontSize="Subtitle"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+            <VerticalStackLayout Padding="5" Spacing="5">
+
+                <Label Text="Количество занятий у спортсмена больше, чем:" Margin="15"/>
+                <Entry x:Name="ActivitiesCount" Keyboard="Numeric"
+                       Margin="10,0" Placeholder="Введите кол-во занятий"/>
+
+                <Button x:Name="GetList" Text="Вывести" Clicked="GetList_Clicked"/>
+
+                <Button x:Name="Clear" Text="Очистить" Clicked="Clear_Clicked"/>
+
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked" Margin="0,0,0,25"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

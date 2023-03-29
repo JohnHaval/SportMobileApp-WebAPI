@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.SportsPages.MainSports"
+             Title="Виды спорта" NavigatedTo="ContentPage_NavigatedTo">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Frame HeightRequest="500">
+            <ListView x:Name="ObjectsList" ItemTapped="ObjectsList_ItemTapped" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <HorizontalStackLayout Spacing="5">
+                                <StackLayout>
+                                        <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontAttributes="Bold" HeightRequest="36" FontSize="Subtitle"/>
+                                        <HorizontalStackLayout>
+                                        <Label Margin="0,0,5,0">Ед.измерения:</Label>
+                                        <Label Text="{Binding Measures.Name}"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Margin="0,0,5,0">Мировой рекорд:</Label>
+                                        <Label Text="{Binding WorldRecord}"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Margin="0,0,5,0">Дата рекорда:</Label>
+                                        <Label Text="{Binding RecordDate, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                    </HorizontalStackLayout>
+                                </StackLayout>
+                            </HorizontalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </Frame>
+            <VerticalStackLayout Padding="5" Spacing="5">
+
+                <Button x:Name="AddObject" Text="Добавить" Clicked="AddObject_Clicked"/>
+
+                <Button x:Name="Refresh" Text="Обновить" Clicked="Refresh_Clicked"/>
+
+                <Button x:Name="Clear" Text="Очистить" Clicked="Clear_Clicked"/>
+
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

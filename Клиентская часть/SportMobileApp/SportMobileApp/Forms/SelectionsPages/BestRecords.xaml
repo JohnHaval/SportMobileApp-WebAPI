@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.SelectionsPages.BestRecords"
+             Title="Лучшие результаты">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Frame HeightRequest="400">
+                <ListView x:Name="ObjectsList" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Spacing="5">
+
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="{Binding Place}" FontSize="Title"/>
+                                        <Label Margin="5,0,0,0" FontSize="Title">место</Label>
+                                    </HorizontalStackLayout>
+
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="{Binding Competitions.Name}"/>
+                                        <Label Margin="5,0,0,0">место</Label>
+                                    </HorizontalStackLayout>
+
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="{Binding Sportsmen.SecondName}"/>
+                                        <Label Text="{Binding Sportsmen.FirstName}"/>
+                                        <Label Text="{Binding Sportsmen.ThirdName}"/>
+                                    </HorizontalStackLayout>
+
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Margin="0,0,5,0">Рекорд:</Label>
+                                        <Label Text="{Binding Record}"/>
+                                    </HorizontalStackLayout>
+
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+            <VerticalStackLayout Padding="5" Spacing="5">
+
+                <Label Text="Вид спорта" Margin="15"/>
+                <Picker x:Name="SportsList" ItemDisplayBinding="{Binding Name}"
+                    Margin="10,0"/>
+
+                <Label Text="Единица измерения" Margin="15"/>
+                <Picker x:Name="MeasuresList" ItemDisplayBinding="{Binding Name}"
+                        Margin="10,0"/>
+
+                <Label Text="Установление рекорда:" Margin="15"/>
+                <Picker x:Name="RecordSet" Margin="10,0">
+                    <Picker.Items>
+                        <x:String>По увеличению значения</x:String>
+                        <x:String>По уменьшению значения</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Фамилия спортсмена (не обязательно)" Margin="15"/>
+                <Entry x:Name="SecondName"
+                       Margin="10,0" Placeholder="Введите фамилию спортсмена"/>
+
+                <Button x:Name="GetList" Text="Вывести" Clicked="GetList_Clicked"/>
+
+                <Button x:Name="Clear" Text="Очистить" Clicked="Clear_Clicked"/>
+
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked" Margin="0,0,0,25"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

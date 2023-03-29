@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportMobileApp.Forms.ResultsPages.ResultsControl"
+             Title="Добавление результата">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <TableView HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection Title="Информация о результате">
+                        <EntryCell x:Name="Place" Label="Место" Placeholder="Введите место спортсмена" Keyboard="Numeric"/>
+                        <EntryCell x:Name="Record" Label="Рекорд" Placeholder="Введите рекорд спортсмена" Keyboard="Numeric"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <VerticalStackLayout>
+                <Label Text="Спортсмен" Margin="15"/>
+                <Picker x:Name="SportsmenList" Margin="10,0" ItemDisplayBinding="{Binding SFT}"/>
+
+                <Label Text="Соревнование" Margin="15"/>
+                <Picker x:Name="CompetitionsList" ItemDisplayBinding="{Binding Name}"
+                        Margin="10,0" SelectedIndexChanged="CompetitionsList_SelectedIndexChanged"/>
+                
+                <Label Text="Вид спорта соревнования" Margin="15"/>
+                <Label x:Name="SportName" Text="Нет" Margin="15,0"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Padding="10" Spacing="15">
+                <Button x:Name="Act" Text="Добавить" Clicked="Act_Clicked"/>
+                <Button x:Name="Remove" Text="Удалить" IsVisible="False" Clicked="Remove_Clicked"/>
+                <Button x:Name="Cancel" Text="Назад" Clicked="Cancel_Clicked"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
